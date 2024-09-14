@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salão Soares - Agendamentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>SALÃO SOARES</h1>
+        <p>Seu estilo em boas mãos. Agende agora!</p>
+    </header>
+    
+    <main>
+        <!-- Seção de Serviços -->
+        <section id="services">
+            <h2>Escolha um Serviço</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <img src="imagens/corte.png" alt="Corte de Cabelo">
+                    <h3>Corte de Cabelo</h3>
+                    <p>R$ 30,00</p>
+                    <button onclick="selectService('Corte de Cabelo')">Agendar</button>
+                </div>
+                <div class="service-item">
+                    <img src="imagens/barba.png" alt="Barba">
+                    <h3>Barba</h3>
+                    <p>R$ 20,00</p>
+                    <button onclick="selectService('Barba')">Agendar</button>
+                </div>
+                <div class="service-item">
+                    <img src="imagens/sobrancelha.png" alt="Sobrancelha">
+                    <h3>Sobrancelha</h3>
+                    <p>R$ 15,00</p>
+                    <button onclick="selectService('Sobrancelha')">Agendar</button>
+                </div>
+                <div class="service-item">
+                    <img src="imagens/hidratacao.png" alt="Hidratação">
+                    <h3>Hidratação</h3>
+                    <p>R$ 40,00</p>
+                    <button onclick="selectService('Hidratação')">Agendar</button>
+                </div>
+                <div class="service-item">
+                    <img src="imagens/pigmentacao.png" alt="Pigmentação">
+                    <h3>Pigmentação</h3>
+                    <p>R$ 50,00</p>
+                    <button onclick="selectService('Pigmentação')">Agendar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Formulário de Agendamento -->
+        <section id="booking-form">
+            <h2>Agendar <span id="selected-service">Serviço</span></h2>
+            <form id="form" onsubmit="confirmBooking(event)">
+                <label for="date">Data:</label>
+                <input type="date" id="date" required>
+                
+                <label for="time">Horário:</label>
+                <input type="time" id="time" required>
+                
+                <button type="submit">Confirmar Agendamento</button>
+            </form>
+        </section>
+
+        <!-- Seção de Confirmação de Agendamento -->
+        <section id="confirmation" style="display: none;">
+            <h2>Agendamento Confirmado!</h2>
+            <p id="confirmation-details"></p>
+            <button onclick="newBooking()">Novo Agendamento</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Salão Soares &copy; 2024 - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
